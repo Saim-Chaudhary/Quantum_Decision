@@ -1,0 +1,116 @@
+@import "tailwindcss";
+@import "reactflow/dist/style.css";
+
+:root {
+  /* User-Specified Palette */
+  --dusk-blue: #3d5a80;
+  --powder-blue: #98c1d9;
+  --light-cyan: #e0fbfc;
+  --burnt-peach: #ee6c4d;
+  --jet-black: #293241;
+
+  /* Semantic UI Tokens mapped intentionally */
+  --background: #1c232e;
+  --surface: #293241;
+  --surface-muted: #222a37;
+  --surface-border: #3d5a80;
+  --foreground: #e0fbfc;
+  --foreground-muted: #98c1d9;
+  
+  --primary: #ee6c4d;           /* Burnt Peach: Key CTA & High-impact branch */
+  --primary-hover: #f28469;
+  --primary-glow: rgba(238, 108, 77, 0.25);
+  
+  --secondary: #98c1d9;         /* Powder Blue: Structural accents */
+  --secondary-glow: rgba(152, 193, 217, 0.25);
+  
+  --teal-accent: #14b8a6;       /* Secondary Accent: Cool Teal for status & non-critical badges */
+  --teal-accent-subtle: #0d9488;
+  --teal-glow: rgba(20, 184, 166, 0.25);
+  
+  --accent: #3d5a80;            /* Dusk Blue: Technical scaffolding */
+
+  --font-display: var(--font-syne);
+  --font-body: var(--font-body);
+  --font-code: var(--font-mono);
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-body), system-ui, -apple-system, sans-serif;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, .font-display {
+  font-family: var(--font-display), sans-serif;
+}
+
+code, pre, .font-mono {
+  font-family: var(--font-code), monospace;
+}
+
+/* Custom React Flow Theme overrides */
+.react-flow__background {
+  background-color: #1c232e !important;
+}
+
+.react-flow__controls {
+  background: #293241 !important;
+  border: 1px solid #3d5a80 !important;
+  border-radius: 8px !important;
+  box-shadow: 0 4px 20px rgba(28, 35, 46, 0.6) !important;
+}
+
+.react-flow__controls-button {
+  background: #293241 !important;
+  border-bottom: 1px solid #3d5a80 !important;
+  fill: #98c1d9 !important;
+}
+
+.react-flow__controls-button:hover {
+  background: #3d5a80 !important;
+  fill: #e0fbfc !important;
+}
+
+.react-flow__edge-path {
+  stroke: #3d5a80;
+  stroke-width: 2;
+  transition: stroke 0.3s ease, stroke-width 0.3s ease;
+}
+
+.react-flow__edge.active .react-flow__edge-path {
+  stroke: #ee6c4d !important;
+  stroke-width: 2.5 !important;
+  filter: drop-shadow(0 0 8px rgba(238, 108, 77, 0.7));
+}
+
+.react-flow__edge.accent-active .react-flow__edge-path {
+  stroke: #98c1d9 !important;
+  stroke-width: 2.5 !important;
+  filter: drop-shadow(0 0 8px rgba(152, 193, 217, 0.7));
+}
+
+.react-flow__edge.completed .react-flow__edge-path {
+  stroke: #3d5a80 !important;
+  stroke-width: 2 !important;
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1c232e;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #3d5a80;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #98c1d9;
+}
